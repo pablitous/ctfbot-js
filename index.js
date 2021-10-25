@@ -74,11 +74,12 @@ async function doFishes() {
                 }
             });
             //console.log(foodExists);
+            await sleep(getRandomInt(1000, 2000));
             fed = false;
             neededFood = document.getElementsByClassName("nobb")[1].innerHTML;
             foodExists.forEach(function (value) {
                 //console.log(key, value);
-                sleep(getRandomInt(50000, 12000));
+                sleep(getRandomInt(1000, 2000));
                 if (foodAvailable[value[0]] > neededFood && fed == false) {
                     console.log(
                         dateNow()+" Found food " + value[1] + " with " + foodAvailable[value[0]]
