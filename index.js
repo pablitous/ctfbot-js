@@ -11,6 +11,7 @@
         while (true) {
             //alert('do whatever');
             await sleep(getRandomInt(2000, 4000));
+            
             document.getElementById("metalog1").getElementsByTagName("a")[0].click();
             await sleep(getRandomInt(3000, 6000));
             await getDailyReward();
