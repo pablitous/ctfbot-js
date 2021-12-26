@@ -60,7 +60,7 @@
             if (feedPercentage < 50) {
                 console.log(dateNow()+" Need to fucking fed the fishes");
                 fishes[i].getElementsByClassName("feedfish")[0].click();
-                await sleep(getRandomInt(3000, 6000));
+                await sleep(getRandomInt(300, 1200));
                 var foodAvailable = new Array();
                 var foodExists = new Array();
                 foodExists[0] = [1025, "Pumpkin soup"];
@@ -77,14 +77,14 @@
                     }
                 });
                 //console.log(foodExists);
-                await sleep(getRandomInt(1000, 2000));
+                await sleep(getRandomInt(200, 1200));
                 var fed = false;
                 neededFood = document.getElementsByClassName("nobb")[1].innerHTML;
                 neededFood = parseInt(neededFood);
             
                 for(j=0;j<foodExists.length;j++){
                     //console.log(dateNow() + 'recorro Cada Comida');
-                    await sleep(getRandomInt(2000, 5000));
+                    await sleep(getRandomInt(200, 800));
                     //console.log(dateNow() + fed + " " + foodExists[j][1]);
                     //console.log(dateNow() + 'recorro Cada Comida');
                     foodAvailableInt = parseInt(foodAvailable[foodExists[j][0]]);
@@ -98,7 +98,7 @@
                         element.dispatchEvent(event);
                         //document.getElementById("avfoods").val(foodExists[j][0]).trigger('change');
                         document.getElementsByClassName("feednowfish")[0].disabled = false;
-                        await sleep(getRandomInt(1000, 2000));
+                        await sleep(getRandomInt(200, 1000));
                         var theButton = document.getElementsByClassName("feednowfish")[0];
                         var box = theButton.getBoundingClientRect(),
                         coordX = box.left + (box.right - box.left) / 2 + getRandomInt(-10,10),
@@ -108,7 +108,7 @@
                         simulateMouseEvent(theButton, "click", coordX, coordY);
                         //document.getElementsByClassName("feednowfish")[0].click();
                         fed = true;
-                        await sleep(getRandomInt(500, 2000));
+                        await sleep(getRandomInt(200, 1000));
                         console.log(
                             dateNow()+" The fish number " +
                             i +
@@ -122,14 +122,14 @@
                     }    
                     
                 };
-                await sleep(getRandomInt(3000, 6000));
+                await sleep(getRandomInt(200, 1200));
             } else {
                 console.log(
                     dateNow()+" Fish " +
                     fishes[i].getElementsByClassName("feedfish")[0].id +
                     " don`t need to be fed"
                 );
-                await sleep(getRandomInt(3000, 6000));
+                await sleep(getRandomInt(200, 1200));
             }
         }
     }
